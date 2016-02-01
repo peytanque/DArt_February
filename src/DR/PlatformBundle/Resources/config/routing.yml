@@ -1,3 +1,30 @@
 dr_index:
     path:     /
     defaults: { _controller: DRPlatformBundle:Art:index }
+
+# TYPE
+
+dr_type_index:
+    path:     /type
+    defaults: { _controller: DRPlatformBundle:Type:index }
+    methods:  [GET]
+
+dr_type_new:
+    path:     /type/new
+    defaults: { _controller: DRPlatformBundle:Type:new }
+    methods:  [GET, POST]
+
+dr_type_show:
+    path:     /type/{id}
+    defaults: { _controller: DRPlatformBundle:Type:show }
+    methods:  [GET]
+
+dr_type_edit:
+    path:     /type/{id}/edit
+    defaults: { _controller: DRPlatformBundle:Type:edit }
+    methods:  [GET, POST]
+
+dr_type_delete:
+    path:     /type/{id}
+    defaults: { _controller: DRPlatformBundle:Type:delete }
+    methods:  [DELETE]

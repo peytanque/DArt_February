@@ -1,0 +1,3 @@
+dr_platform:
+    resource: "@DRPlatformBundle/Resources/config/routing.yml"
+    prefix:   /

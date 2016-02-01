@@ -1,0 +1,4 @@
+services:
+#    dr_platform.example:
+#        class: DR\PlatformBundle\Example
+#        arguments: ["@service_id", "plain_value", %parameter%]

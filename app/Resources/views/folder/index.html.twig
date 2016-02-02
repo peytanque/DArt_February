@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Folder list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for folder in folders %}
+            <tr>
+                <td><a href="{{ path('folder_show', { 'id': folder.id }) }}">{{ folder.id }}</a></td>
+                <td>{{ folder.name }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('folder_show', { 'id': folder.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('folder_edit', { 'id': folder.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('folder_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

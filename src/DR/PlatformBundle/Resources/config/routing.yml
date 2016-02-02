@@ -28,3 +28,30 @@ dr_type_delete:
     path:     /type/{id}
     defaults: { _controller: DRPlatformBundle:Type:delete }
     methods:  [DELETE]
+
+# FOLDER
+
+dr_folder_index:
+    path:     /folder
+    defaults: { _controller: DRPlatformBundle:Folder:index }
+    methods:  [GET]
+
+dr_folder_new:
+    path:     /folder/new
+    defaults: { _controller: DRPlatformBundle:Folder:new }
+    methods:  [GET, POST]
+
+dr_folder_show:
+    path:     /folder/{id}
+    defaults: { _controller: DRPlatformBundle:Folder:show }
+    methods:  [GET]
+
+dr_folder_edit:
+    path:     /folder/{id}/edit
+    defaults: { _controller: DRPlatformBundle:Folder:edit }
+    methods:  [GET, POST]
+
+dr_folder_delete:
+    path:     /folder/{id}
+    defaults: { _controller: DRPlatformBundle:Folder:delete }
+    methods:  [DELETE]

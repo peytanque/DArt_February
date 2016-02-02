@@ -5,6 +5,7 @@ namespace DR\PlatformBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 class TypeType extends AbstractType
 {
@@ -15,10 +16,13 @@ class TypeType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('name')
+        ->add('name')
+        ->add('save', SubmitType::class, array(
+            'attr' => array('value' => 'Create')
+            ))
         ;
-    }
-    
+        }
+
     /**
      * @param OptionsResolver $resolver
      */
@@ -26,6 +30,6 @@ class TypeType extends AbstractType
     {
         $resolver->setDefaults(array(
             'data_class' => 'DR\PlatformBundle\Entity\Type'
-        ));
+            ));
     }
 }

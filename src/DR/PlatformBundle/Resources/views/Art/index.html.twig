@@ -2,10 +2,17 @@
 
 {% block title %}{{ parent() }} - Accueil{% endblock %}
 
-    {% block body %}
-        <div class="container">
-            <ol>
-                <li>first_item</li>
-            </ol>
-        </div>
-    {% endblock %}
+	{% block body %}
+		<ol style="list-style: none;" align="center">
+			<li>
+				<h1>
+					<a href="{{ path('dr_type_index') }}" style="color:#d9534f"><span class="glyphicon glyphicon-bookmark"> Type</span></a>
+				</h1>
+			</li>
+			<li>
+				<h1>
+					<a href="{{ path('dr_folder_index') }}" style="color:#d9534f"><span class="glyphicon glyphicon-folder-open"> Folder</span></a>
+				</h1>
+			</li>
+		</ol>
+	{% endblock %}

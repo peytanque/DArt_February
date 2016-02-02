@@ -1,27 +1,27 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Type</h1>
+    <h1>Folder</h1>
 
     <table>
         <tbody>
             <tr>
                 <th>Id</th>
-                <td>{{ type.id }}</td>
+                <td>{{ folder.id }}</td>
             </tr>
             <tr>
                 <th>Name</th>
-                <td>{{ type.name }}</td>
+                <td>{{ folder.name }}</td>
             </tr>
         </tbody>
     </table>
 
     <ul>
         <li>
-            <a href="{{ path('dr_type_index') }}">Back to the list</a>
+            <a href="{{ path('dr_folder_index') }}">Back to the list</a>
         </li>
         <li>
-            <a href="{{ path('dr_type_edit', { 'id': type.id }) }}">Edit</a>
+            <a href="{{ path('dr_folder_edit', { 'id': folder.id }) }}">Edit</a>
         </li>
         <li>
             {{ form_start(delete_form) }}

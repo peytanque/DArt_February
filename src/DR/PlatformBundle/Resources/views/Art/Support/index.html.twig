@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Folder list</h1>
+    <h1>Support list</h1>
 
     <table>
         <thead>
@@ -12,17 +12,17 @@
             </tr>
         </thead>
         <tbody>
-        {% for folder in folders %}
+        {% for support in supports %}
             <tr>
-                <td><a href="{{ path('folder_show', { 'id': folder.id }) }}">{{ folder.id }}</a></td>
-                <td>{{ folder.name }}</td>
+                <td><a href="{{ path('dr_support_show', { 'id': support.id }) }}">{{ support.id }}</a></td>
+                <td>{{ support.name }}</td>
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('folder_show', { 'id': folder.id }) }}">show</a>
+                            <a href="{{ path('dr_support_show', { 'id': support.id }) }}">show</a>
                         </li>
                         <li>
-                            <a href="{{ path('folder_edit', { 'id': folder.id }) }}">edit</a>
+                            <a href="{{ path('dr_support_edit', { 'id': support.id }) }}">edit</a>
                         </li>
                     </ul>
                 </td>
@@ -33,7 +33,7 @@
 
     <ul>
         <li>
-            <a href="{{ path('folder_new') }}">Create a new entry</a>
+            <a href="{{ path('dr_support_new') }}">Create a new entry</a>
         </li>
     </ul>
 {% endblock %}

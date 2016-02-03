@@ -28,6 +28,11 @@ class Ref
      */
     private $name;
 
+    /**
+    * @ORM\ManyToOne(targetEntity="DR\PlatformBundle\Entity\Folder", inversedBy="refs")
+    */
+    private $folder;
+
 
     /**
      * Get id
@@ -60,5 +65,28 @@ class Ref
     public function getName()
     {
         return $this->name;
+    }
+
+    /**
+     * Set folder
+     *
+     * @param \DR\PlatformBundle\Entity\Folder $folder
+     * @return Ref
+     */
+    public function setFolder(\DR\PlatformBundle\Entity\Folder $folder)
+    {
+        $this->folder = $folder;
+
+        return $this;
+    }
+
+    /**
+     * Get folder
+     *
+     * @return \DR\PlatformBundle\Entity\Folder 
+     */
+    public function getFolder()
+    {
+        return $this->folder;
     }
 }

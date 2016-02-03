@@ -2,6 +2,33 @@ dr_index:
     path:     /
     defaults: { _controller: DRPlatformBundle:Art:index }
 
+# ARTPURCHASE
+
+dr_artpurchase_index:
+    path:     /artpurchase
+    defaults: { _controller: DRPlatformBundle:ArtPurchase:index }
+    methods:  [GET]
+
+dr_artpurchase_new:
+    path:     /artpurchase/new
+    defaults: { _controller: DRPlatformBundle:ArtPurchase:new }
+    methods:  [GET, POST]
+
+dr_artpurchase_show:
+    path:     /artpurchase/{id}
+    defaults: { _controller: DRPlatformBundle:ArtPurchase:show }
+    methods:  [GET]
+
+dr_artpurchase_edit:
+    path:     /artpurchase/{id}/edit
+    defaults: { _controller: DRPlatformBundle:ArtPurchase:edit }
+    methods:  [GET, POST]
+
+dr_artpurchase_delete:
+    path:     /artpurchase/{id}
+    defaults: { _controller: DRPlatformBundle:ArtPurchase:delete }
+    methods:  [DELETE]
+
 # TYPE
 
 dr_type_index:
@@ -54,4 +81,139 @@ dr_folder_edit:
 dr_folder_delete:
     path:     /folder/{id}
     defaults: { _controller: DRPlatformBundle:Folder:delete }
+    methods:  [DELETE]
+
+# REF
+
+dr_ref_index:
+    path:     /ref
+    defaults: { _controller: DRPlatformBundle:Ref:index }
+    methods:  [GET]
+
+dr_ref_new:
+    path:     /ref/new
+    defaults: { _controller: DRPlatformBundle:Ref:new }
+    methods:  [GET, POST]
+
+dr_ref_show:
+    path:     /ref/{id}
+    defaults: { _controller: DRPlatformBundle:Ref:show }
+    methods:  [GET]
+
+dr_ref_edit:
+    path:     /ref/{id}/edit
+    defaults: { _controller: DRPlatformBundle:Ref:edit }
+    methods:  [GET, POST]
+
+dr_ref_delete:
+    path:     /ref/{id}
+    defaults: { _controller: DRPlatformBundle:Ref:delete }
+    methods:  [DELETE]
+
+# SUPPLIER
+
+dr_supplier_index:
+    path:     /supplier
+    defaults: { _controller: DRPlatformBundle:Supplier:index }
+    methods:  [GET]
+
+dr_supplier_new:
+    path:     /supplier/new
+    defaults: { _controller: DRPlatformBundle:Supplier:new }
+    methods:  [GET, POST]
+
+dr_supplier_show:
+    path:     /supplier/{id}
+    defaults: { _controller: DRPlatformBundle:Supplier:show }
+    methods:  [GET]
+
+dr_supplier_edit:
+    path:     /supplier/{id}/edit
+    defaults: { _controller: DRPlatformBundle:Supplier:edit }
+    methods:  [GET, POST]
+
+dr_supplier_delete:
+    path:     /supplier/{id}
+    defaults: { _controller: DRPlatformBundle:Supplier:delete }
+    methods:  [DELETE]
+
+# CUSTOMER
+
+dr_customer_index:
+    path:     /customer
+    defaults: { _controller: DRPlatformBundle:Customer:index }
+    methods:  [GET]
+
+dr_customer_new:
+    path:     /customer/new
+    defaults: { _controller: DRPlatformBundle:Customer:new }
+    methods:  [GET, POST]
+
+dr_customer_show:
+    path:     /customer/{id}
+    defaults: { _controller: DRPlatformBundle:Customer:show }
+    methods:  [GET]
+
+dr_customer_edit:
+    path:     /customer/{id}/edit
+    defaults: { _controller: DRPlatformBundle:Customer:edit }
+    methods:  [GET, POST]
+
+dr_customer_delete:
+    path:     /customer/{id}
+    defaults: { _controller: DRPlatformBundle:Customer:delete }
+    methods:  [DELETE]
+
+# AREA
+
+dr_area_index:
+    path:     /area
+    defaults: { _controller: DRPlatformBundle:Area:index }
+    methods:  [GET]
+
+dr_area_new:
+    path:     /area/new
+    defaults: { _controller: DRPlatformBundle:Area:new }
+    methods:  [GET, POST]
+
+dr_area_show:
+    path:     /area/{id}
+    defaults: { _controller: DRPlatformBundle:Area:show }
+    methods:  [GET]
+
+dr_area_edit:
+    path:     /area/{id}/edit
+    defaults: { _controller: DRPlatformBundle:Area:edit }
+    methods:  [GET, POST]
+
+dr_area_delete:
+    path:     /area/{id}
+    defaults: { _controller: DRPlatformBundle:Area:delete }
+    methods:  [DELETE]
+
+# SUPPORT
+
+dr_support_index:
+    path:     /support
+    defaults: { _controller: DRPlatformBundle:Support:index }
+    methods:  [GET]
+
+dr_support_new:
+    path:     /support/new
+    defaults: { _controller: DRPlatformBundle:Support:new }
+    methods:  [GET, POST]
+
+dr_support_show:
+    path:     /support/{id}
+    defaults: { _controller: DRPlatformBundle:Support:show }
+    methods:  [GET]
+
+dr_support_edit:
+    path:     /support/{id}/edit
+    defaults: { _controller: DRPlatformBundle:Support:edit }
+    methods:  [GET, POST]
+
+dr_support_delete:
+    path:     /support/{id}
+    defaults: { _controller: DRPlatformBundle:Support:delete }
     methods:  [DELETE]

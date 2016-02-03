@@ -17,11 +17,13 @@ class FolderType extends AbstractType
     {
         $builder
         ->add('name')
-        ->add('ref', EntityType::class, array(
-            'class' => 'DRPlatformBundle:Ref'
-        ;
-    }
-    
+        ->add('refs', EntityType::class, array(
+            'multiple' => 'true',
+            'class' => 'DRPlatformBundle:Ref',
+            'choice_label' => 'name'))
+            ;
+        }
+
     /**
      * @param OptionsResolver $resolver
      */

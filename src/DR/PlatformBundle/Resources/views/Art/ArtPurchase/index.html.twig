@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>ArtPurchase list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Visualname</th>
+                <th>Linkfile</th>
+                <th>Cost</th>
+                <th>Reference</th>
+                <th>Ordeform</th>
+                <th>Startdate</th>
+                <th>Enddate</th>
+                <th>Copy</th>
+                <th>Comment</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for artPurchase in artPurchases %}
+            <tr>
+                <td><a href="{{ path('dr_artpurchase_show', { 'id': artPurchase.id }) }}">{{ artPurchase.id }}</a></td>
+                <td>{{ artPurchase.visualname }}</td>
+                <td>{{ artPurchase.linkfile }}</td>
+                <td>{{ artPurchase.cost }}</td>
+                <td>{{ artPurchase.reference }}</td>
+                <td>{{ artPurchase.ordeform }}</td>
+                <td>{% if artPurchase.startdate %}{{ artPurchase.startdate|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if artPurchase.enddate %}{{ artPurchase.enddate|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ artPurchase.copy }}</td>
+                <td>{{ artPurchase.comment }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('dr_artpurchase_show', { 'id': artPurchase.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('dr_artpurchase_edit', { 'id': artPurchase.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('dr_artpurchase_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

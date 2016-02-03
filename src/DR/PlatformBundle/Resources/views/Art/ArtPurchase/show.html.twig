@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>ArtPurchase</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ artPurchase.id }}</td>
+            </tr>
+            <tr>
+                <th>Visualname</th>
+                <td>{{ artPurchase.visualname }}</td>
+            </tr>
+            <tr>
+                <th>Linkfile</th>
+                <td>{{ artPurchase.linkfile }}</td>
+            </tr>
+            <tr>
+                <th>Cost</th>
+                <td>{{ artPurchase.cost }}</td>
+            </tr>
+            <tr>
+                <th>Reference</th>
+                <td>{{ artPurchase.reference }}</td>
+            </tr>
+            <tr>
+                <th>Ordeform</th>
+                <td>{{ artPurchase.ordeform }}</td>
+            </tr>
+            <tr>
+                <th>Startdate</th>
+                <td>{% if artPurchase.startdate %}{{ artPurchase.startdate|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Enddate</th>
+                <td>{% if artPurchase.enddate %}{{ artPurchase.enddate|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Copy</th>
+                <td>{{ artPurchase.copy }}</td>
+            </tr>
+            <tr>
+                <th>Comment</th>
+                <td>{{ artPurchase.comment }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('dr_artpurchase_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('dr_artpurchase_edit', { 'id': artPurchase.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

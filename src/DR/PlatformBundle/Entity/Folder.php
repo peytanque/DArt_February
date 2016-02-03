@@ -30,11 +30,15 @@ class Folder
 
     /**
     * @ORM\OneToMany(targetEntity="DR\PlatformBundle\Entity\Ref", mappedBy="folder")
-    * @ORM\JoinColumn(nullable=false)
-    * 
     */
-    private $ref;
-
+    private $refs;
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->refs = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id
@@ -68,44 +72,37 @@ class Folder
     {
         return $this->name;
     }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->ref = new \Doctrine\Common\Collections\ArrayCollection();
-    }
 
     /**
-     * Add ref
+     * Add refs
      *
-     * @param \DR\PlatformBundle\Entity\Ref $ref
+     * @param \DR\PlatformBundle\Entity\Ref $refs
      * @return Folder
      */
-    public function addRef(\DR\PlatformBundle\Entity\Ref $ref)
+    public function addRef(\DR\PlatformBundle\Entity\Ref $refs)
     {
-        $this->ref[] = $ref;
+        $this->refs[] = $refs;
 
         return $this;
     }
 
     /**
-     * Remove ref
+     * Remove refs
      *
-     * @param \DR\PlatformBundle\Entity\Ref $ref
+     * @param \DR\PlatformBundle\Entity\Ref $refs
      */
-    public function removeRef(\DR\PlatformBundle\Entity\Ref $ref)
+    public function removeRef(\DR\PlatformBundle\Entity\Ref $refs)
     {
-        $this->ref->removeElement($ref);
+        $this->refs->removeElement($refs);
     }
 
     /**
-     * Get ref
+     * Get refs
      *
      * @return \Doctrine\Common\Collections\Collection 
      */
-    public function getRef()
+    public function getRefs()
     {
-        return $this->ref;
+        return $this->refs;
     }
 }

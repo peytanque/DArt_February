@@ -3,33 +3,39 @@
 {% block body %}
     <h1>Folder list</h1>
 
-    <table>
+    <table border="1">
         <thead>
             <tr>
                 <th>Id</th>
                 <th>Name</th>
-                <th>Ref</th>
+                <th>Refs</th>
                 <th>Actions</th>
             </tr>
         </thead>
         <tbody>
-        {% for folder in folders %}
-            <tr>
-                <td><a href="{{ path('dr_folder_show', { 'id': folder.id }) }}">{{ folder.id }}</a></td>
-                <td>{{ folder.name }}</td>
-                <td>{{ folder.ref }}</td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('dr_folder_show', { 'id': folder.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('dr_folder_edit', { 'id': folder.id }) }}">edit</a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
-        {% endfor %}
+            {% for folder in folders %}
+                <tr>
+                    <td><a href="{{ path('dr_folder_show', { 'id': folder.id }) }}">{{ folder.id }}</a></td>
+                    <td>{{ folder.name }}</td>
+                    <td>
+                        <ul>
+                        {% for ref in folder.refs %}
+                            <li>{{ ref.name }}</li>
+                        {% endfor %}
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li>
+                                <a href="{{ path('dr_folder_show', { 'id': folder.id }) }}">show</a>
+                            </li>
+                            <li>
+                                <a href="{{ path('dr_folder_edit', { 'id': folder.id }) }}">edit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            {% endfor %}
         </tbody>
     </table>
 

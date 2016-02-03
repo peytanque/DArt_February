@@ -22,9 +22,11 @@ class FolderController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $folders = $em->getRepository('DRPlatformBundle:Folder')->findAll();
+        $refs = $em->getRepository('DRPlatformBundle:Ref')->findAll();
 
         return $this->render('DRPlatformBundle:Art:Folder/index.html.twig', array(
             'folders' => $folders,
+            'refs' => $refs,
         ));
     }
 
@@ -69,7 +71,7 @@ class FolderController extends Controller
             $em->persist($folder);
             $em->flush();
 
-            return $this->redirectToRoute('dr_folder_edit', array('id' => $folder->getId()));
+            return $this->redirectToRoute('dr_folder_show', array('id' => $folder->getId()));
         }
 
         return $this->render('DRPlatformBundle:Art:Folder/edit.html.twig', array(

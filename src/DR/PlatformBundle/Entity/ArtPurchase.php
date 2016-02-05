@@ -68,7 +68,7 @@ class ArtPurchase
      *
      * @ORM\Column(name="ordeform", type="string", length=255, nullable=true)
      */
-    private $ordeform;
+    private $orderform;
 
     /**
     * @ORM\ManyToOne(targetEntity="DR\PlatformBundle\Entity\Supplier")
@@ -113,10 +113,9 @@ class ArtPurchase
     private $support;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="copy", type="string", length=255, nullable=true)
-     */
+    * @var integer
+    * @ORM\Column(name="copy", type="integer")
+    */
     private $copy;
 
     /**
@@ -230,26 +229,26 @@ class ArtPurchase
     }
 
     /**
-     * Set ordeform
+     * Set orderform
      *
-     * @param string $ordeform
+     * @param string $orderform
      * @return ArtPurchase
      */
-    public function setOrdeform($ordeform)
+    public function setOrderform($orderform)
     {
-        $this->ordeform = $ordeform;
+        $this->orderform = $orderform;
 
         return $this;
     }
 
     /**
-     * Get ordeform
+     * Get orderform
      *
      * @return string 
      */
-    public function getOrdeform()
+    public function getOrderform()
     {
-        return $this->ordeform;
+        return $this->orderform;
     }
 
     /**
@@ -301,7 +300,7 @@ class ArtPurchase
     /**
      * Set copy
      *
-     * @param string $copy
+     * @param integer $copy
      * @return ArtPurchase
      */
     public function setCopy($copy)
@@ -314,7 +313,7 @@ class ArtPurchase
     /**
      * Get copy
      *
-     * @return string 
+     * @return integer 
      */
     public function getCopy()
     {

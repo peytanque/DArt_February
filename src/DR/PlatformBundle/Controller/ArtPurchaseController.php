@@ -40,7 +40,7 @@ class ArtPurchaseController extends Controller
             $em->persist($artPurchase);
             $em->flush();
 
-            return $this->redirectToRoute('dr_artpurchase_show', array('id' => $artpurchase->getId()));
+            return $this->redirectToRoute('dr_artpurchase_show', array('id' => $artPurchase->getId()));
         }
 
         return $this->render('DRPlatformBundle:Art:ArtPurchase/new.html.twig', array(

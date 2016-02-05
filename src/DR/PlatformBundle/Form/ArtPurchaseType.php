@@ -21,15 +21,17 @@ class ArtPurchaseType extends AbstractType
         ->add('linkfile')
         ->add('cost')
         ->add('reference')
-        ->add('ordeform')
+        ->add('orderform')
         ->add('startdate', DateType::class)
         ->add('enddate', DateType::class)
         ->add('copy')
         ->add('comment')
-        ->add('type')
+        ->add('type', EntityType::class, array(
+            'class' => 'DRPlatformBundle:Type',
+            'choice_label' => 'name'))
         ->add('folder', EntityType::class, array(
             'class' => 'DRPlatformBundle:Folder',
-            'choice_label' => 'name'))
+            'choice_label' => 'ref'))
         ->add('supplier', EntityType::class, array(
             'class' => 'DRPlatformBundle:Supplier',
             'choice_label' => 'name'))
@@ -38,9 +40,13 @@ class ArtPurchaseType extends AbstractType
             'choice_label' => 'name'))
         ->add('area', EntityType::class, array(
             'class' => 'DRPlatformBundle:Area',
+            'multiple' => true,
+            'expanded' => true,
             'choice_label' => 'country'))
         ->add('support', EntityType::class, array(
             'class' => 'DRPlatformBundle:Support',
+            'multiple' => true,
+            'expanded' => true,
             'choice_label' => 'name'))
         ;
     }

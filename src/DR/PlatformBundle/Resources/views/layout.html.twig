@@ -7,11 +7,13 @@
 
 	{# On charge le CSS de bootstrap depuis le site directement #}
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-	
+	<link data-require="bootstrap@*" data-semver="3.3.2" rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
+	<link data-require="bootstrap-css@3.3.*" data-semver="3.3.2" rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
+	<script data-require="bootstrap@*" data-semver="3.3.2" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 </head>
 <body>
 	<div class="jumbotron">
-		<div id="header">
+		<div class="col-md-offset-1">
 			<h1>
 				<a href="{{path('dr_index')}}" style="color:#d9534f">
 					<span class="glyphicon glyphicon-fire">DragonART</span>

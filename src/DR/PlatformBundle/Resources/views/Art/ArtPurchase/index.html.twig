@@ -1,9 +1,8 @@
-{% extends 'base.html.twig' %}
+{% extends "DRPlatformBundle::layout.html.twig" %}
 
 {% block body %}
     <h1>ArtPurchase list</h1>
-
-    <table>
+    <table class="table-responsive" border="1">
         <thead>
             <tr>
                 <th>Id</th>
@@ -11,42 +10,67 @@
                 <th>Linkfile</th>
                 <th>Cost</th>
                 <th>Reference</th>
-                <th>Ordeform</th>
+                <th>Orderform</th>
                 <th>Startdate</th>
                 <th>Enddate</th>
                 <th>Copy</th>
                 <th>Comment</th>
+                {# ajout  #}
+                <th>Type</th>
+                <th>Folder</th>
+                <th>Supplier</th>
+                <th>Customer</th>
+                <th>Area</th>
+                <th>Support</th>
+                {# fin ajout #}
                 <th>Actions</th>
             </tr>
         </thead>
         <tbody>
-        {% for artPurchase in artPurchases %}
-            <tr>
-                <td><a href="{{ path('dr_artpurchase_show', { 'id': artPurchase.id }) }}">{{ artPurchase.id }}</a></td>
-                <td>{{ artPurchase.visualname }}</td>
-                <td>{{ artPurchase.linkfile }}</td>
-                <td>{{ artPurchase.cost }}</td>
-                <td>{{ artPurchase.reference }}</td>
-                <td>{{ artPurchase.ordeform }}</td>
-                <td>{% if artPurchase.startdate %}{{ artPurchase.startdate|date('Y-m-d H:i:s') }}{% endif %}</td>
-                <td>{% if artPurchase.enddate %}{{ artPurchase.enddate|date('Y-m-d H:i:s') }}{% endif %}</td>
-                <td>{{ artPurchase.copy }}</td>
-                <td>{{ artPurchase.comment }}</td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('dr_artpurchase_show', { 'id': artPurchase.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('dr_artpurchase_edit', { 'id': artPurchase.id }) }}">edit</a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
-        {% endfor %}
+            {% for artPurchase in artPurchases %}
+                <tr>
+                    <td><a href="{{ path('dr_artpurchase_show', { 'id': artPurchase.id }) }}">{{ artPurchase.id }}</a></td>
+                    <td>{{ artPurchase.visualname }}</td>
+                    <td><a href="{{ artPurchase.linkfile }}">{{ artPurchase.linkfile }}</a></td>
+                    <td>{{ artPurchase.cost }}</td>
+                    <td>{{ artPurchase.reference }}</td>
+                    <td>{{ artPurchase.orderform }}</td>
+                    <td>{% if artPurchase.startdate %}{{ artPurchase.startdate|date('Y-m-d H:i:s') }}{% endif %}</td>
+                    <td>{% if artPurchase.enddate %}{{ artPurchase.enddate|date('Y-m-d H:i:s') }}{% endif %}</td>
+                    <td>{{ artPurchase.copy }}</td>
+                    <td>{{ artPurchase.comment }}</td>
+                    <td>{{ artPurchase.type.name }}</td>
+                    <td>{{ artPurchase.folder.name }}</td>
+                    <td>{{ artPurchase.supplier.name }}</td>
+                    <td>{{ artPurchase.customer.name }}</td>
+                    <td>
+                        <ul>
+                            {% for area in artPurchase.area %}
+                                <li>{{ area.country }}</li>
+                            {% endfor %}
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            {% for support in artPurchase.support %}
+                                <li>{{ support.name }}</li>
+                            {% endfor %}
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li>
+                                <a href="{{ path('dr_artpurchase_show', { 'id': artPurchase.id }) }}">show</a>
+                            </li>
+                            <li>
+                                <a href="{{ path('dr_artpurchase_edit', { 'id': artPurchase.id }) }}">edit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            {% endfor %}
         </tbody>
     </table>
-
     <ul>
         <li>
             <a href="{{ path('dr_artpurchase_new') }}">Create a new entry</a>

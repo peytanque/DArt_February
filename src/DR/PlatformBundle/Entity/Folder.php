@@ -24,21 +24,16 @@ class Folder
     /**
      * @var string
      *
+     * @ORM\Column(name="ref", type="string", length=255, unique=true)
+     */
+    private $ref;
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="name", type="string", length=255, nullable=true, unique=true)
      */
     private $name;
-
-    /**
-    * @ORM\OneToMany(targetEntity="DR\PlatformBundle\Entity\Ref", mappedBy="folder")
-    */
-    private $refs;
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->refs = new \Doctrine\Common\Collections\ArrayCollection();
-    }
 
     /**
      * Get id
@@ -73,36 +68,27 @@ class Folder
         return $this->name;
     }
 
+
     /**
-     * Add refs
+     * Set ref
      *
-     * @param \DR\PlatformBundle\Entity\Ref $refs
+     * @param string $ref
      * @return Folder
      */
-    public function addRef(\DR\PlatformBundle\Entity\Ref $refs)
+    public function setRef($ref)
     {
-        $this->refs[] = $refs;
+        $this->ref = $ref;
 
         return $this;
     }
 
     /**
-     * Remove refs
+     * Get ref
      *
-     * @param \DR\PlatformBundle\Entity\Ref $refs
+     * @return string 
      */
-    public function removeRef(\DR\PlatformBundle\Entity\Ref $refs)
+    public function getRef()
     {
-        $this->refs->removeElement($refs);
-    }
-
-    /**
-     * Get refs
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getRefs()
-    {
-        return $this->refs;
+        return $this->ref;
     }
 }

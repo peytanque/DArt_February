@@ -83,33 +83,6 @@ dr_folder_delete:
     defaults: { _controller: DRPlatformBundle:Folder:delete }
     methods:  [DELETE]
 
-# REF
-
-dr_ref_index:
-    path:     /ref
-    defaults: { _controller: DRPlatformBundle:Ref:index }
-    methods:  [GET]
-
-dr_ref_new:
-    path:     /ref/new
-    defaults: { _controller: DRPlatformBundle:Ref:new }
-    methods:  [GET, POST]
-
-dr_ref_show:
-    path:     /ref/{id}
-    defaults: { _controller: DRPlatformBundle:Ref:show }
-    methods:  [GET]
-
-dr_ref_edit:
-    path:     /ref/{id}/edit
-    defaults: { _controller: DRPlatformBundle:Ref:edit }
-    methods:  [GET, POST]
-
-dr_ref_delete:
-    path:     /ref/{id}
-    defaults: { _controller: DRPlatformBundle:Ref:delete }
-    methods:  [DELETE]
-
 # SUPPLIER
 
 dr_supplier_index:

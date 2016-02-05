@@ -3,7 +3,12 @@
 {% block title %}{{ parent() }} - Accueil{% endblock %}
 
 	{% block body %}
-		<ol style="list-style: none;" align="center">
+		<ol style="list-style: none;">
+			<li>
+				<h1>
+					<a href="{{ path('dr_artpurchase_index') }}" style="color:#d9534f"><span class="glyphicon glyphicon-picture"> ArtPurchase</span></a>
+				</h1>
+			</li>
 			<li>
 				<h1>
 					<a href="{{ path('dr_type_index') }}" style="color:#d9534f"><span class="glyphicon glyphicon-bookmark"> Type</span></a>
@@ -14,5 +19,26 @@
 					<a href="{{ path('dr_folder_index') }}" style="color:#d9534f"><span class="glyphicon glyphicon-folder-open"> Folder</span></a>
 				</h1>
 			</li>
+			<li>
+				<h1>
+					<a href="{{ path('dr_supplier_index') }}" style="color:#d9534f"><span class="glyphicon glyphicon-user"> Supplier</span></a>
+				</h1>
+			</li>
+			<li>
+				<h1>
+					<a href="{{ path('dr_customer_index') }}" style="color:#d9534f"><span class="glyphicon glyphicon-piggy-bank"> Customer</span></a>
+				</h1>
+			</li>
+			<li>
+				<h1>
+					<a href="{{ path('dr_area_index') }}" style="color:#d9534f"><span class="glyphicon glyphicon-globe"> Area</span></a>
+				</h1>
+			</li>
+			<li>
+				<h1>
+					<a href="{{ path('dr_support_index') }}" style="color:#d9534f"><span class="glyphicon glyphicon-list-alt"> Support</span></a>
+				</h1>
+			</li>
+
 		</ol>
 	{% endblock %}

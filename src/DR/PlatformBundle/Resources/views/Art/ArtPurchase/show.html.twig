@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends "DRPlatformBundle::layout.html.twig" %}
 
 {% block body %}
     <h1>ArtPurchase</h1>
@@ -26,8 +26,8 @@
                 <td>{{ artPurchase.reference }}</td>
             </tr>
             <tr>
-                <th>Ordeform</th>
-                <td>{{ artPurchase.ordeform }}</td>
+                <th>Orderform</th>
+                <td>{{ artPurchase.orderform }}</td>
             </tr>
             <tr>
                 <th>Startdate</th>
@@ -45,6 +45,44 @@
                 <th>Comment</th>
                 <td>{{ artPurchase.comment }}</td>
             </tr>
+            {# ajout #}
+            <tr>
+                <th>Type</th>
+                <td>{{ artPurchase.type.name }}</td>
+            </tr>
+            <tr>
+                <th>Folder</th>
+                <td>{{ artPurchase.folder.name }}</td>
+            </tr>
+            <tr>
+                <th>Supplier</th>
+                <td>{{ artPurchase.supplier.name }}</td>
+            </tr>
+            <tr>
+                <th>Customer</th>
+                <td>{{ artPurchase.customer.name }}</td>
+            </tr>
+            <tr>
+                <th>Area</th>
+                <td>
+                    <ul>
+                        {% for area in artPurchase.area %}
+                            <li>{{ area.country }}</li>
+                        {% endfor %}
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Support</th>
+                <td>
+                    <ul>
+                        {% for support in artPurchase.support %}
+                            <li>{{ support.name }}</li>
+                        {% endfor %}
+                    </ul>
+                </td>
+            </tr>
+            {# fin ajout #}
         </tbody>
     </table>
 
@@ -57,7 +95,7 @@
         </li>
         <li>
             {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
+            <input type="submit" value="Delete">
             {{ form_end(delete_form) }}
         </li>
     </ul>

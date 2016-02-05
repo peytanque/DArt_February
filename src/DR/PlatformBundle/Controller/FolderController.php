@@ -22,11 +22,9 @@ class FolderController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $folders = $em->getRepository('DRPlatformBundle:Folder')->findAll();
-        $refs = $em->getRepository('DRPlatformBundle:Ref')->findAll();
 
         return $this->render('DRPlatformBundle:Art:Folder/index.html.twig', array(
             'folders' => $folders,
-            'refs' => $refs,
         ));
     }
 

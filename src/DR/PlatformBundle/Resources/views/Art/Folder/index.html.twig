@@ -1,14 +1,13 @@
-{% extends 'base.html.twig' %}
+{% extends "DRPlatformBundle::layout.html.twig" %}
 
 {% block body %}
     <h1>Folder list</h1>
 
-    <table border="1">
+    <table>
         <thead>
             <tr>
                 <th>Id</th>
                 <th>Name</th>
-                <th>Refs</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -16,14 +15,8 @@
             {% for folder in folders %}
                 <tr>
                     <td><a href="{{ path('dr_folder_show', { 'id': folder.id }) }}">{{ folder.id }}</a></td>
+                    <td>{{ folder.ref }}</td>
                     <td>{{ folder.name }}</td>
-                    <td>
-                        <ul>
-                        {% for ref in folder.refs %}
-                            <li>{{ ref.name }}</li>
-                        {% endfor %}
-                        </ul>
-                    </td>
                     <td>
                         <ul>
                             <li>

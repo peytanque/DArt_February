@@ -5,7 +5,6 @@ namespace DR\PlatformBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
 class FolderType extends AbstractType
 {
@@ -16,13 +15,10 @@ class FolderType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+        ->add('ref')
         ->add('name')
-        ->add('refs', EntityType::class, array(
-            'multiple' => 'true',
-            'class' => 'DRPlatformBundle:Ref',
-            'choice_label' => 'name'))
-            ;
-        }
+        ;
+    }
 
     /**
      * @param OptionsResolver $resolver

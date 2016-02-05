@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends "DRPlatformBundle::layout.html.twig" %}
 
 {% block body %}
     <h1>Folder</h1>
@@ -8,6 +8,10 @@
             <tr>
                 <th>Id</th>
                 <td>{{ folder.id }}</td>
+            </tr>
+            <tr>
+                <th>Ref</th>
+                <td>{{ folder.ref }}</td>
             </tr>
             <tr>
                 <th>Name</th>

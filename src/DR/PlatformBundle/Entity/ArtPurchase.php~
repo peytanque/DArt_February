@@ -515,27 +515,4 @@ class ArtPurchase
     {
         return $this->support;
     }
-
-    /**
-     * Set isDG
-     *
-     * @param boolean $isDG
-     * @return ArtPurchase
-     */
-    public function setIsDG($isDG)
-    {
-        $this->isDG = $isDG;
-
-        return $this;
-    }
-
-    /**
-     * Get isDG
-     *
-     * @return boolean 
-     */
-    public function getIsDG()
-    {
-        return $this->isDG;
-    }
 }

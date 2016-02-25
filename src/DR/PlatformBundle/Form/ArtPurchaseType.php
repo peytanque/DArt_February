@@ -48,6 +48,7 @@ class ArtPurchaseType extends AbstractType
             'multiple' => true,
             'expanded' => true,
             'choice_label' => 'name'))
+        ->add('isDG')
         ;
     }
     

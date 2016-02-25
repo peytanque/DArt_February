@@ -22,9 +22,9 @@ class Folder
     private $id;
 
     /**
-     * @var string
+     * @var integer
      *
-     * @ORM\Column(name="ref", type="string", length=255, unique=true)
+     * @ORM\Column(name="ref", type="integer", length=255, unique=true)
      */
     private $ref;
 
@@ -72,7 +72,7 @@ class Folder
     /**
      * Set ref
      *
-     * @param string $ref
+     * @param integer $ref
      * @return Folder
      */
     public function setRef($ref)
@@ -85,7 +85,7 @@ class Folder
     /**
      * Get ref
      *
-     * @return string 
+     * @return integer 
      */
     public function getRef()
     {
